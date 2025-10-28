@@ -16,7 +16,7 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             
             Text("This is my first app!")
-            Text("Yo have tapped \(tapCount) times")
+            Text("You are have tapped \(tapCount) times")
                 .padding()
             Button("Click Me!") {
                 tapCount+=1 //

@@ -15,20 +15,26 @@ struct ContentView: View {
             // --- New Logos (Side by side) ---
             // Horizontal Stack
             HStack {
-                Image("icecube_logo") // <-- Change this to your logo's name
-                .resizable()         // Makes the image resizeable
-                .scaledToFit()       // Fits it to the available space
-//                .frame(height: 80)   // Sets a fixed height (optional)
-//                .padding()
+                Link(destination: URL (string:"https://icecube.wisc.edu/")!) {
+                    Image("icecube_logo") // <-- Change this to your logo's name
+                        .resizable()         // Makes the image resizeable
+                        .scaledToFit()       // Fits it to the available space
+                    //                .frame(height: 80)   // Sets a fixed height (optional)
+                    //                .padding()
+                }
+
                             
                 // 2. Add the second image (icecube logo)
-                Image("uofu_physics") // <-- Change this to your logo's name
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 60)
+                Link(destination: URL(string: "https://www.physics.utah.edu/")!) {
+                    Image("uofu_physics") // <-- Change this to your logo's name
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 60)
+                }
+
                 
             }
-            .frame(height:80)
+            .frame(height:60)
             .padding(.bottom)
 
             // ------------------------
@@ -45,6 +51,7 @@ struct ContentView: View {
                 // This is the "action"
                 // Nothing happens yet!
             }
+            Spacer()
             
         }
         .padding()

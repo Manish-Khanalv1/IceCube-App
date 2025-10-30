@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tapCount = 0
+    @State private var isGlobeVisible=true
     
     var body: some View {
         VStack {
@@ -22,6 +23,15 @@ struct ContentView: View {
             .frame(height: 60)
             .padding(.bottom)
             
+            
+            // -- Config for the Globe toggle
+            
+            if isGlobeVisible {
+                Image(systemName:"globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                    .padding(.bottom)
+            }
             
             // --- 1. FANCY TAP COUNTER ---
             VStack { // We put the two texts in their own V-Stack
@@ -73,7 +83,8 @@ struct ContentView: View {
             .fontWeight(.bold) // Make the text bold
             .padding(.top, 10) // A little space from the button above
 
-            
+            Toggle("Show Global Icon",isOn:$isGlobeVisible)
+                .padding()
             Spacer() // Pushes everything to the top
             
         } // End of main VStack
